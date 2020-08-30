@@ -1,5 +1,33 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<CRUD_With_CoreMvc_test_01.Models.School>
+
+<h1 class="text-center">School Information</h1>
+
+<a class="btn btn-primary" asp-action="Create" asp-controller="School">Create a new School</a>
+
+<br />
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr class="text-center">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var school in Model)
+        {
+            <tr class="text-center">
+
+                <td>@school.SchoolId</td>
+                <td>@school.Name</td>
+                <td>@school.Location</td>
+                <td><a asp-action="Edit" asp-controller="School" asp-route-id="@school.SchoolId" class="btn btn-info form-control">Edit</a></td>
+                <td><a asp-action="Delete" asp-controller="School" asp-route-id="@school.SchoolId" class="btn btn-danger form-control">Delete</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

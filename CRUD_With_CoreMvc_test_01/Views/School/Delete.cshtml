@@ -1,5 +1,15 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model CRUD_With_CoreMvc_test_01.Models.School
+
+<h1 class="text-center">School Delation</h1>
+
+<h3>Are you sure you want to delete this School Permanatly ??</h3>
+
+<form asp-action="Delete" role="form" class="form-horizontal">
+    <input hidden asp-for="SchoolId" />
+    <div class="col-md-3">
+        <input type="submit" class="btn btn-danger form-control" value="Yes" />
+    </div>
+    <div class="col-md-3">
+        <a asp-action="Index" class="btn btn-dark form-control">Back To List</a>
+    </div>
+</form>
